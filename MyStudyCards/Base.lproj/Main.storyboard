@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -32,7 +32,7 @@
                                 <rect key="frame" x="53" y="429" width="46" height="30"/>
                                 <state key="normal" title="Create"/>
                                 <connections>
-                                    <segue destination="vAb-8C-Spi" kind="modal" id="fl0-cQ-Yw3"/>
+                                    <segue destination="LJ2-dg-ucd" kind="modal" id="fl0-cQ-Yw3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="69" y="391"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="YeD-SP-o7o">
             <objects>
                 <viewController id="vAb-8C-Spi" sceneMemberID="viewController">
@@ -98,10 +98,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="ATI-Bw-QP7">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="rCB-qZ-eWl">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="modal" id="oSK-r2-Uxj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DdG-7i-dik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="1068"/>
+            <point key="canvasLocation" x="605" y="1068"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0HN-FO-X49">
@@ -175,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kXf-zp-BNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="460" y="1162.5"/>
+            <point key="canvasLocation" x="992" y="1162.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="m6h-mw-z9F">
@@ -450,6 +457,10 @@
         <scene sceneID="vzU-1i-XjV">
             <objects>
                 <viewController id="eU9-CD-omJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ctw-x0-Efm"/>
+                        <viewControllerLayoutGuide type="bottom" id="TSE-tz-hya"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Tg7-kt-dXt">
                         <rect key="frame" x="0.0" y="0.0" width="263" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -457,7 +468,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hQW-bm-loG">
                                 <rect key="frame" x="11" y="25" width="240" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -468,6 +479,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dF5-WE-LFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1010.5" y="1795.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1i9-CF-cuk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LJ2-dg-ucd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yrw-4O-rnU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vAb-8C-Spi" kind="relationship" relationship="rootViewController" id="LLL-F0-lWk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ln-f9-t74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73" y="1068"/>
         </scene>
     </scenes>
 </document>
