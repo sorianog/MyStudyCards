@@ -21,10 +21,6 @@
                                 <rect key="frame" x="140" y="314" width="40" height="30"/>
                                 <state key="normal" title="Study"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qem-9b-dbe">
-                                <rect key="frame" x="53" y="429" width="46" height="30"/>
-                                <state key="normal" title="Create"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvO-rE-ysv">
                                 <rect key="frame" x="218" y="429" width="43" height="30"/>
                                 <state key="normal" title="Decks"/>
@@ -32,6 +28,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uO-kA-oGt">
                                 <rect key="frame" x="40" y="62" width="240" height="171"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qem-9b-dbe">
+                                <rect key="frame" x="53" y="429" width="46" height="30"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <segue destination="vAb-8C-Spi" kind="modal" id="fl0-cQ-Yw3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
