@@ -33,3 +33,23 @@ class MyDecksViewController: ViewController {
     */
 
 }
+
+extension MyDecksViewController: UITableViewDataSource {
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return deck.getDecks().count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cellIdentifier = "CurrDecksCell"
+    var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+    if cell == nil {
+      cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
+    }
+    cell.textLabel!.text = deck.getDecks()[indexPath.row]
+    return cell
+  }
+}
+
+extension MyDecksViewController: UITableViewDelegate {
+  
+}
