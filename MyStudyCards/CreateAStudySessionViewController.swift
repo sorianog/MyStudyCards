@@ -22,6 +22,7 @@ class CreateAStudySessionViewController: ViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 }
 
 extension CreateAStudySessionViewController: UITableViewDataSource{

@@ -13,5 +13,19 @@ class StudyViewFlipsideViewController: UIViewController {
     @IBAction func close() {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let value = UIInterfaceOrientation.LandscapeLeft.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+    
 
 }
