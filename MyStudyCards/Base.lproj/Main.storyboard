@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3Eb-6S-nYs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3Eb-6S-nYs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--My Study Cards-->
+        <!--My Study Cards View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MyStudyCardsViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,8 +31,8 @@
                                     <segue destination="iyX-3F-G4W" kind="push" id="e32-I2-k5n"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uO-kA-oGt">
-                                <rect key="frame" x="40" y="62" width="240" height="171"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Notecard" translatesAutoresizingMaskIntoConstraints="NO" id="2uO-kA-oGt">
+                                <rect key="frame" x="0.0" y="64" width="320" height="199"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qem-9b-dbe">
                                 <rect key="frame" x="53" y="429" width="46" height="30"/>
@@ -41,16 +41,22 @@
                                     <segue destination="vAb-8C-Spi" kind="push" id="JvP-Bv-l9k"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Study Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e25-M7-jMW">
+                                <rect key="frame" x="11" y="93" width="205" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Study Cards" id="I6K-XF-cPq">
+                    <navigationItem key="navigationItem" id="I6K-XF-cPq">
                         <barButtonItem key="backBarButtonItem" title="Home" id="dne-nF-1pj"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-155" y="1559"/>
+            <point key="canvasLocation" x="-157" y="1569"/>
         </scene>
         <!--Create a Deck-->
         <scene sceneID="YeD-SP-o7o">
@@ -450,10 +456,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Notecard" width="480" height="288"/>
         <image name="thumbs-down" width="32" height="32"/>
         <image name="thumbs-up" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="07P-0h-Ujp"/>
+        <segue reference="JvP-Bv-l9k"/>
     </inferredMetricsTieBreakers>
 </document>
