@@ -10,20 +10,28 @@ import Foundation
 
 class Decks{
     
-    var decksList = [String]()
+    init(){
+        addDummyData()
+    }
     
+    var decksList = [String]()
+  
     //return list of current decks
     func getDecks() -> [String]{
-        decksList.append("Gerald");
-        decksList.append("Sean");
-        decksList.append("Noah");
-        return decksList;
+        
+        return decksList
     }
     
     //add provided string to list of decks
     func addToDeck(name: String){
         
-        decksList.append(name);
+        decksList.append(name)
+    }
+    
+    func addDummyData(){
+        decksList.append("Gerald")
+        decksList.append("Sean")
+        decksList.append("Noah")
     }
     
 }
@@ -33,10 +41,10 @@ class Cards{
     var cardsList = [String]()
     
     func getCards() -> [String]{
-        return cardsList;
+        return cardsList
     }
     
     func addToCards(name: String){
-        cardsList.append(name);
+        cardsList.append(name)
     }
 }
