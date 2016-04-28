@@ -8,7 +8,7 @@
         <!--My Study Cards-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MyStudyCardsViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -55,7 +55,7 @@
         <!--Create a Deck-->
         <scene sceneID="YeD-SP-o7o">
             <objects>
-                <viewController id="vAb-8C-Spi" sceneMemberID="viewController">
+                <viewController id="vAb-8C-Spi" customClass="CreateADeckViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u5L-tt-aIh"/>
                         <viewControllerLayoutGuide type="bottom" id="06h-bI-iws"/>
@@ -170,7 +170,7 @@
         <!--Create a Card-->
         <scene sceneID="m6h-mw-z9F">
             <objects>
-                <viewController id="k4j-k9-EtL" sceneMemberID="viewController">
+                <viewController id="k4j-k9-EtL" customClass="CreateACardViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Os6-Lv-cDB"/>
                         <viewControllerLayoutGuide type="bottom" id="CRy-zg-Msb"/>
@@ -226,10 +226,10 @@
             </objects>
             <point key="canvasLocation" x="423" y="3181"/>
         </scene>
-        <!--View Controller-->
+        <!--Study View View Controller-->
         <scene sceneID="hIS-FJ-XDg">
             <objects>
-                <viewController id="VmK-Zf-BQR" sceneMemberID="viewController">
+                <viewController id="VmK-Zf-BQR" customClass="StudyViewViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7G3-Oa-19j"/>
                         <viewControllerLayoutGuide type="bottom" id="Cq1-tW-1uQ"/>
@@ -266,7 +266,7 @@
         <!--My Decks-->
         <scene sceneID="PlE-uz-vvW">
             <objects>
-                <viewController id="iyX-3F-G4W" sceneMemberID="viewController">
+                <viewController id="iyX-3F-G4W" customClass="MyDecksViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZDl-KO-ULw"/>
                         <viewControllerLayoutGuide type="bottom" id="ER0-Un-JUJ"/>
@@ -369,7 +369,7 @@
         <!--Create a Study Session-->
         <scene sceneID="deN-CB-lML">
             <objects>
-                <viewController id="Pr1-uP-v4p" sceneMemberID="viewController">
+                <viewController id="Pr1-uP-v4p" customClass="CreateAStudySessionViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ybx-JL-cl8"/>
                         <viewControllerLayoutGuide type="bottom" id="Pno-69-8vn"/>
@@ -442,6 +442,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JvP-Bv-l9k"/>
+        <segue reference="07P-0h-Ujp"/>
     </inferredMetricsTieBreakers>
 </document>
