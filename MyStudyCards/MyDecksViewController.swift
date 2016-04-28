@@ -36,7 +36,7 @@ class MyDecksViewController: ViewController {
 
 extension MyDecksViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
+    return deck.getDecks().count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -45,7 +45,7 @@ extension MyDecksViewController: UITableViewDataSource {
     if cell == nil {
       cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
     }
-    cell.textLabel!.text = "My Deck"
+    cell.textLabel!.text = deck.getDecks()[indexPath.row]
     return cell
   }
 }
