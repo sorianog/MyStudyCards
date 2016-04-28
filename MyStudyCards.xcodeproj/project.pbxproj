@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1A5F6201CD27E58009DDC6D /* StudyViewFlipsideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A5F61F1CD27E58009DDC6D /* StudyViewFlipsideViewController.swift */; };
 		B1CC1BE41CC924EC0094A54D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CC1BE31CC924EC0094A54D /* AppDelegate.swift */; };
 		B1CC1BE61CC924EC0094A54D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CC1BE51CC924EC0094A54D /* ViewController.swift */; };
 		B1CC1BE91CC924EC0094A54D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1CC1BE71CC924EC0094A54D /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1A5F61F1CD27E58009DDC6D /* StudyViewFlipsideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyViewFlipsideViewController.swift; sourceTree = "<group>"; };
 		B1CC1BE01CC924EC0094A54D /* MyStudyCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStudyCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CC1BE31CC924EC0094A54D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1CC1BE51CC924EC0094A54D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				B1CC1BE31CC924EC0094A54D /* AppDelegate.swift */,
 				B1CC1BE51CC924EC0094A54D /* ViewController.swift */,
 				B1CC1BE71CC924EC0094A54D /* Main.storyboard */,
+				B1A5F61F1CD27E58009DDC6D /* StudyViewFlipsideViewController.swift */,
 				B1CC1BEA1CC924EC0094A54D /* Assets.xcassets */,
 				B1CC1BEC1CC924EC0094A54D /* LaunchScreen.storyboard */,
 				B1CC1BEF1CC924EC0094A54D /* Info.plist */,
@@ -163,6 +166,7 @@
 				B1CC1BE61CC924EC0094A54D /* ViewController.swift in Sources */,
 				B1CC1BE41CC924EC0094A54D /* AppDelegate.swift in Sources */,
 				C7D2AF631CD26DAC0087B77A /* Utilities.swift in Sources */,
+				B1A5F6201CD27E58009DDC6D /* StudyViewFlipsideViewController.swift in Sources */,
 				C7D2AF591CD264B60087B77A /* CreateAStudySessionViewController.swift in Sources */,
 				C7D2AF5D1CD264E90087B77A /* CreateADeckViewController.swift in Sources */,
 			);
