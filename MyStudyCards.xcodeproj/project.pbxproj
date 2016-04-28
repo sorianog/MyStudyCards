@@ -18,6 +18,7 @@
 		C7D2AF5D1CD264E90087B77A /* CreateADeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2AF5C1CD264E90087B77A /* CreateADeckViewController.swift */; };
 		C7D2AF5F1CD265030087B77A /* CreateACardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2AF5E1CD265030087B77A /* CreateACardViewController.swift */; };
 		C7D2AF611CD265300087B77A /* StudyViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2AF601CD265300087B77A /* StudyViewViewController.swift */; };
+		C7D2AF631CD26DAC0087B77A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2AF621CD26DAC0087B77A /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C7D2AF5C1CD264E90087B77A /* CreateADeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateADeckViewController.swift; sourceTree = "<group>"; };
 		C7D2AF5E1CD265030087B77A /* CreateACardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateACardViewController.swift; sourceTree = "<group>"; };
 		C7D2AF601CD265300087B77A /* StudyViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyViewViewController.swift; sourceTree = "<group>"; };
+		C7D2AF621CD26DAC0087B77A /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				C7D2AF5C1CD264E90087B77A /* CreateADeckViewController.swift */,
 				C7D2AF5E1CD265030087B77A /* CreateACardViewController.swift */,
 				C7D2AF601CD265300087B77A /* StudyViewViewController.swift */,
+				C7D2AF621CD26DAC0087B77A /* Utilities.swift */,
 			);
 			path = MyStudyCards;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				C7D2AF611CD265300087B77A /* StudyViewViewController.swift in Sources */,
 				B1CC1BE61CC924EC0094A54D /* ViewController.swift in Sources */,
 				B1CC1BE41CC924EC0094A54D /* AppDelegate.swift in Sources */,
+				C7D2AF631CD26DAC0087B77A /* Utilities.swift in Sources */,
 				C7D2AF591CD264B60087B77A /* CreateAStudySessionViewController.swift in Sources */,
 				C7D2AF5D1CD264E90087B77A /* CreateADeckViewController.swift in Sources */,
 			);
