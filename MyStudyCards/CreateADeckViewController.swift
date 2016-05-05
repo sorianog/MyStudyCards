@@ -12,6 +12,7 @@ import CoreData
 class CreateADeckViewController: ViewController {
 
   @IBOutlet weak var deckNameField: UITextField!
+    
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,6 +39,11 @@ class CreateADeckViewController: ViewController {
   @IBAction func saveClicked() {
     saveDeckName(deckNameField.text!)
   }
+    
+
+    @IBAction func createCard(){
+        curDeckName = deckNameField.text!
+    }
   
   func saveDeckName(name: String){
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -49,12 +55,32 @@ class CreateADeckViewController: ViewController {
     
     deck.setValue(name, forKey: "name")
     
+    
     do {
       try managedContext.save()
       decks.append(deck)
     } catch let error as NSError {
       print("Could not save \(error), \(error.userInfo)")
     }
+    
+    for toAdd in curCardArray{
+        let curEntity = NSEntityDescription.entityForName("Card", inManagedObjectContext: managedContext)
+        let card = NSManagedObject(entity: curEntity!, insertIntoManagedObjectContext: managedContext)
+        card.setValue(toAdd.dname, forKey: "dName")
+        card.setValue(toAdd.frontDescription, forKey: "front")
+        card.setValue(toAdd.backDescription, forKey: "back")
+        do {
+            try managedContext.save()
+            print("saved card to cards")
+            print(cards.count)
+            cards.append(card)
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    //remove all after saving
+    curCardArray.removeAll()
+    
   }
 
 }

@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 
 var decks = [NSManagedObject]()
+var cards = [NSManagedObject]()
 
 class Decks{
     
@@ -54,4 +55,5 @@ class Cards{
 struct Card{
     var frontDescription: String
     var backDescription: String
+    var dname: String
 }
