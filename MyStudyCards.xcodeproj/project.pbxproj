@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A49B6D81CDA7199002EE7A3 /* AppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A49B6D61CDA7199002EE7A3 /* AppModel.xcdatamodeld */; };
+		3A49B6DA1CDA762C002EE7A3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A49B6D91CDA762C002EE7A3 /* CoreData.framework */; };
 		B1A5F6201CD27E58009DDC6D /* StudyViewFlipsideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A5F61F1CD27E58009DDC6D /* StudyViewFlipsideViewController.swift */; };
 		B1A5F6241CD28CA2009DDC6D /* ResultsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A5F6231CD28CA2009DDC6D /* ResultsScreenViewController.swift */; };
 		B1CC1BE41CC924EC0094A54D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CC1BE31CC924EC0094A54D /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A49B6D71CDA7199002EE7A3 /* AppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppModel.xcdatamodel; sourceTree = "<group>"; };
+		3A49B6D91CDA762C002EE7A3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B1A5F61F1CD27E58009DDC6D /* StudyViewFlipsideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyViewFlipsideViewController.swift; sourceTree = "<group>"; };
 		B1A5F6231CD28CA2009DDC6D /* ResultsScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsScreenViewController.swift; sourceTree = "<group>"; };
 		B1CC1BE01CC924EC0094A54D /* MyStudyCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStudyCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A49B6DA1CDA762C002EE7A3 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,7 @@
 		B1CC1BD71CC924EC0094A54D = {
 			isa = PBXGroup;
 			children = (
+				3A49B6D91CDA762C002EE7A3 /* CoreData.framework */,
 				B1CC1BE21CC924EC0094A54D /* MyStudyCards */,
 				B1CC1BE11CC924EC0094A54D /* Products */,
 			);
@@ -87,6 +93,7 @@
 				C7D2AF5E1CD265030087B77A /* CreateACardViewController.swift */,
 				C7D2AF601CD265300087B77A /* StudyViewViewController.swift */,
 				C7D2AF621CD26DAC0087B77A /* Utilities.swift */,
+				3A49B6D61CDA7199002EE7A3 /* AppModel.xcdatamodeld */,
 			);
 			path = MyStudyCards;
 			sourceTree = "<group>";
@@ -174,6 +181,7 @@
 				C7D2AF591CD264B60087B77A /* CreateAStudySessionViewController.swift in Sources */,
 				C7D2AF5D1CD264E90087B77A /* CreateADeckViewController.swift in Sources */,
 				B1A5F6241CD28CA2009DDC6D /* ResultsScreenViewController.swift in Sources */,
+				3A49B6D81CDA7199002EE7A3 /* AppModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +342,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A49B6D61CDA7199002EE7A3 /* AppModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A49B6D71CDA7199002EE7A3 /* AppModel.xcdatamodel */,
+			);
+			currentVersion = 3A49B6D71CDA7199002EE7A3 /* AppModel.xcdatamodel */;
+			path = AppModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B1CC1BD81CC924EC0094A54D /* Project object */;
 }

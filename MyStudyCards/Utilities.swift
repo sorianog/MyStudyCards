@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import CoreData
+
+var decks = [NSManagedObject]()
 
 class Decks{
     
     init(){
         addDummyData()
     }
-    
     var decksList = [String]()
-  
     //return list of current decks
     func getDecks() -> [String]{
         

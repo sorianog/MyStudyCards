@@ -7,19 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 class CreateADeckViewController: ViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  @IBOutlet weak var deckNameField: UITextField!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+    // Do any additional setup after loading the view.
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
 
 
     /*
@@ -31,5 +34,27 @@ class CreateADeckViewController: ViewController {
         // Pass the selected object to the new view controller.
     }
     */
+  
+  @IBAction func saveClicked() {
+    saveDeckName(deckNameField.text!)
+  }
+  
+  func saveDeckName(name: String){
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let managedContext = appDelegate.managedObjectContext
+    
+    let entity = NSEntityDescription.entityForName("Deck", inManagedObjectContext: managedContext)
+    
+    let deck = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+    
+    deck.setValue(name, forKey: "name")
+    
+    do {
+      try managedContext.save()
+      decks.append(deck)
+    } catch let error as NSError {
+      print("Could not save \(error), \(error.userInfo)")
+    }
+  }
 
 }
