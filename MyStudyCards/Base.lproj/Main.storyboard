@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3Eb-6S-nYs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3Eb-6S-nYs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--My Study Cards View Controller-->
@@ -391,7 +391,7 @@
         <!--My Decks-->
         <scene sceneID="PlE-uz-vvW">
             <objects>
-                <viewController title="My Decks" id="iyX-3F-G4W" customClass="MyDecksViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myDecksViewController" title="My Decks" id="iyX-3F-G4W" customClass="MyDecksViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZDl-KO-ULw"/>
                         <viewControllerLayoutGuide type="bottom" id="ER0-Un-JUJ"/>
@@ -559,6 +559,6 @@
         <image name="thumbs-up" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JvP-Bv-l9k"/>
+        <segue reference="07P-0h-Ujp"/>
     </inferredMetricsTieBreakers>
 </document>
