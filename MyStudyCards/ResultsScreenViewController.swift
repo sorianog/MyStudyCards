@@ -10,19 +10,20 @@ import UIKit
 
 class ResultsScreenViewController: UIViewController {
     
-    @IBAction func doneClicked() {
-        //for now, this just advances to the results screen
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("mainViewController") as UIViewController
-        self.presentViewController(nextViewController, animated:true, completion:nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-
-
+  @IBOutlet weak var correctAmtLabel: UILabel!
+  @IBOutlet weak var incorrectAmtLabel: UILabel!
+  
+  @IBAction func doneClicked() {
+      //for now, this just advances to the results screen
+      let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+      
+      let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("mainViewController") as UIViewController
+      self.presentViewController(nextViewController, animated:true, completion:nil)
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    correctAmtLabel.text = String(correct)
+    incorrectAmtLabel.text = String(incorrect)
+  }
 }

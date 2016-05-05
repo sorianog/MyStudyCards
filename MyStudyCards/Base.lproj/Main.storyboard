@@ -274,6 +274,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="correctAmtLabel" destination="nnn-6m-MQV" id="KXU-J4-bUl"/>
+                        <outlet property="incorrectAmtLabel" destination="b0y-yX-017" id="HQ4-WJ-oF1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Po9-hK-x9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
