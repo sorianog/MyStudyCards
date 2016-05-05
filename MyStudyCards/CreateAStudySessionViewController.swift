@@ -25,27 +25,23 @@ class CreateAStudySessionViewController: ViewController{
 
 }
 
-extension CreateAStudySessionViewController: UITableViewDataSource{
-    
-    
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return deck.getDecks().count;
+extension CreateAStudySessionViewController: UITableViewDataSource {
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return decks.count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cellIdentifier = "CurrDecksCell"
+    var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+    if cell == nil {
+      cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
     }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "DeckCell";
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier);
-        if cell == nil{
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
-        }
-        cell.textLabel!.text = deck.getDecks()[indexPath.row];
-        return cell;
-    }
-    
+    let deck = decks[indexPath.row]
+    cell.textLabel!.text = deck.valueForKey("name") as? String
+    return cell
+  }
 }
 
-extension CreateAStudySessionViewController: UITableViewDelegate{
-
-    
+extension CreateAStudySessionViewController: UITableViewDelegate {
+  
 }

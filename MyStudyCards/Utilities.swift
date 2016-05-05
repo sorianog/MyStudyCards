@@ -49,3 +49,9 @@ class Cards{
         cardsList.append(name)
     }
 }
+
+
+struct Card{
+    var frontDescription: String
+    var backDescription: String
+}
