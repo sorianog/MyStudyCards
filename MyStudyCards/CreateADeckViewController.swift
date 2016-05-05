@@ -84,3 +84,39 @@ class CreateADeckViewController: ViewController {
   }
 
 }
+
+extension CreateADeckViewController: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cards.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var deckCardList = [String]()
+        
+        var index: Int
+        index = 0
+        while(index<cards.count){
+            print("adding card to deck list for display")
+            let card = cards[index]
+            if card.valueForKey("dName") as? String == deckNameField.text!{
+                deckCardList.append((card.valueForKey("dName") as? String)!)
+            }
+            index++
+        }
+        
+        let cellIdentifier = "cardCell"
+        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+        if cell == nil {
+            cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
+        }
+
+        let card = deckCardList[indexPath.row]
+        cell.textLabel!.text = card
+        return cell
+    }
+}
+
+extension CreateADeckViewController: UITableViewDelegate {
+    
+}
