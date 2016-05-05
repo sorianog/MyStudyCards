@@ -9,6 +9,11 @@
 import UIKit
 
 class CreateACardViewController: ViewController {
+    
+    @IBOutlet weak var cardFrontDescription: UITextField!
+    @IBOutlet weak var cardBackDescription: UITextField!
+    
+    var cardArray = [Card]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +36,12 @@ class CreateACardViewController: ViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func saveCardClick(){
+        //place into temp array
+        let newCard = Card(frontDescription: cardFrontDescription.text!, backDescription: cardBackDescription.text!)
+        cardArray.append(newCard)
+        
+    }
 
 }
