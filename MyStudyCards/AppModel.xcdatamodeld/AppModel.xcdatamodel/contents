@@ -7,10 +7,10 @@
         <relationship name="cardToDeck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" syncable="YES"/>
     </entity>
     <entity name="Deck" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Deck" positionX="-63" positionY="-18" width="128" height="60"/>
         <element name="Card" positionX="-54" positionY="9" width="128" height="105"/>
+        <element name="Deck" positionX="-63" positionY="-18" width="128" height="60"/>
     </elements>
 </model>
