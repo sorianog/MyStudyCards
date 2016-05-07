@@ -16,12 +16,13 @@ class CreateAStudySessionViewController: ViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDecks()
-        tempFillCards()
 
     }
     
     @IBAction func startSessionClicked(){
-        print("test")
+        frontOfCards.removeAll()
+        backOfCards.removeAll()
+        tempFillCards()
         NSNotificationCenter.defaultCenter().postNotificationName("updateCards", object: nil, userInfo: nil)
     }
   
