@@ -14,11 +14,15 @@ class ResultsScreenViewController: UIViewController {
   @IBOutlet weak var incorrectAmtLabel: UILabel!
   
   @IBAction func doneClicked() {
-      //for now, this just advances to the results screen
-      let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-      
-      let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("mainViewController") as UIViewController
-      self.presentViewController(nextViewController, animated:true, completion:nil)
+        correct = 0
+        incorrect = 0
+        currentCard = 0
+        frontOfCards.removeAll()
+        backOfCards.removeAll()
+
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("mainViewController") as UIViewController
+        self.presentViewController(nextViewController, animated:true, completion:nil)
   }
   
   override func viewDidLoad() {

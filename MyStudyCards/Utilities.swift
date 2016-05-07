@@ -11,6 +11,24 @@ import CoreData
 
 var decks = [NSManagedObject]()
 var cards = [NSManagedObject]()
+var frontOfCards = [String]()
+var backOfCards = [String]()
+
+func tempFillCards(){
+    frontOfCards.append("Card 1")
+    frontOfCards.append("Card 2")
+    frontOfCards.append("Card 3")
+    frontOfCards.append("Card 4")
+    frontOfCards.append("Card 5")
+    frontOfCards.append("Card 6")
+    backOfCards.append("Back of card 1")
+    backOfCards.append("Back of card 2")
+    backOfCards.append("Back of card 3")
+    backOfCards.append("Back of card 4")
+    backOfCards.append("Back of card 5")
+    backOfCards.append("Back of card 6")
+    
+}
 
 class Decks{
     
