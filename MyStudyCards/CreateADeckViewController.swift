@@ -12,6 +12,7 @@ import CoreData
 class CreateADeckViewController: ViewController {
 
   @IBOutlet weak var deckNameField: UITextField!
+    
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,6 +40,11 @@ class CreateADeckViewController: ViewController {
     saveDeckName(deckNameField.text!)
 
   }
+    
+
+    @IBAction func createCard(){
+        curDeckName = deckNameField.text!
+    }
   
   func saveDeckName(name: String){
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -50,12 +56,68 @@ class CreateADeckViewController: ViewController {
     
     deck.setValue(name, forKey: "name")
     
+    
     do {
       try managedContext.save()
       decks.append(deck)
     } catch let error as NSError {
       print("Could not save \(error), \(error.userInfo)")
     }
+    
+    for toAdd in curCardArray{
+        let curEntity = NSEntityDescription.entityForName("Card", inManagedObjectContext: managedContext)
+        let card = NSManagedObject(entity: curEntity!, insertIntoManagedObjectContext: managedContext)
+        card.setValue(toAdd.dname, forKey: "dName")
+        card.setValue(toAdd.frontDescription, forKey: "front")
+        card.setValue(toAdd.backDescription, forKey: "back")
+        do {
+            try managedContext.save()
+            print("saved card to cards")
+            print(cards.count)
+            cards.append(card)
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    //remove all after saving
+    curCardArray.removeAll()
+    
   }
 
+}
+
+extension CreateADeckViewController: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cards.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var deckCardList = [String]()
+        
+        var index: Int
+        index = 0
+        while(index<cards.count){
+            print("adding card to deck list for display")
+            let card = cards[index]
+            if card.valueForKey("dName") as? String == deckNameField.text!{
+                deckCardList.append((card.valueForKey("dName") as? String)!)
+            }
+            index++
+        }
+        
+        let cellIdentifier = "cardCell"
+        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+        if cell == nil {
+            cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
+        }
+
+        let card = deckCardList[indexPath.row]
+        cell.textLabel!.text = card
+        return cell
+    }
+}
+
+extension CreateADeckViewController: UITableViewDelegate {
+    
 }

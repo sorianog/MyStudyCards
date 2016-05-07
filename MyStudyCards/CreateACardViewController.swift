@@ -8,12 +8,15 @@
 
 import UIKit
 
+var curCardArray = [Card]()
+var curDeckName = ""
+
 class CreateACardViewController: ViewController {
     
-    @IBOutlet weak var cardFrontDescription: UITextField!
-    @IBOutlet weak var cardBackDescription: UITextField!
     
-    var cardArray = [Card]()
+
+    @IBOutlet weak var cardFrontDescription: UITextView!
+    @IBOutlet weak var cardBackDescription: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +42,9 @@ class CreateACardViewController: ViewController {
     
     @IBAction func saveCardClick(){
         //place into temp array
-        let newCard = Card(frontDescription: cardFrontDescription.text!, backDescription: cardBackDescription.text!)
-        cardArray.append(newCard)
-        
+        print("saved card")
+        let newCard = Card(frontDescription: cardFrontDescription.text!, backDescription: cardBackDescription.text!, dname: curDeckName)
+        curCardArray.append(newCard)
     }
 
 }

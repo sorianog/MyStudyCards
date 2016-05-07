@@ -7,30 +7,47 @@
 //
 
 import UIKit
+import CoreData
 
 class MyDecksViewController: ViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    loadDecks()
     
+      
+    // Do any additional setup after loading the view.
+  }
 
-    /*
-    // MARK: - Navigation
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+  /*
+  // MARK: - Navigation
+
+  // In a storyboard-based application, you will often want to do a little preparation before navigation
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+      // Get the new view controller using segue.destinationViewController.
+      // Pass the selected object to the new view controller.
+  }
+  */
+  
+  func loadDecks() {
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let managedContext = appDelegate.managedObjectContext
+    
+    let fetchRequest = NSFetchRequest(entityName: "Deck")
+    
+    do {
+      let results = try managedContext.executeFetchRequest(fetchRequest)
+      decks = results as! [NSManagedObject]
+    } catch let error as NSError {
+      print("Could not save \(error), \(error.userInfo)")
     }
-    */
+  }
 
 }
 

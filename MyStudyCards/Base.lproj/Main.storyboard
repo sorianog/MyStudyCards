@@ -98,23 +98,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="48J-ar-XC4">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <items>
-                                    <navigationItem id="sJu-zX-eeg">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="KAN-oz-SoC">
-                                            <connections>
-                                                <segue destination="k4j-k9-EtL" kind="push" id="NxK-4C-auu"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="UOY-cb-MAw">
-                                            <connections>
-                                                <action selector="saveClicked" destination="vAb-8C-Spi" id="b93-iq-rz6"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jQH-Rb-RSm">
                                 <rect key="frame" x="20" y="231" width="284" height="209"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,7 +118,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Pok-Hs-3Ye">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCell" id="Pok-Hs-3Ye">
                                         <rect key="frame" x="0.0" y="72" width="284" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pok-Hs-3Ye" id="bUG-hG-IJp">
@@ -168,7 +151,29 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vAb-8C-Spi" id="KuV-Te-3ci"/>
+                                    <outlet property="delegate" destination="vAb-8C-Spi" id="CXJ-6w-qwa"/>
+                                </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="48J-ar-XC4">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="sJu-zX-eeg">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="KAN-oz-SoC">
+                                            <connections>
+                                                <action selector="createCard" destination="vAb-8C-Spi" id="Yj3-QD-IeQ"/>
+                                                <segue destination="k4j-k9-EtL" kind="push" id="NxK-4C-auu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="UOY-cb-MAw">
+                                            <connections>
+                                                <action selector="saveClicked" destination="vAb-8C-Spi" id="b93-iq-rz6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -181,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DdG-7i-dik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="423" y="2331"/>
+            <point key="canvasLocation" x="137" y="2332"/>
         </scene>
         <!--Study View Flipside View Controller-->
         <scene sceneID="RTX-h7-pvc">
@@ -255,13 +260,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0y-yX-017">
-                                <rect key="frame" x="198" y="228" width="10" height="21"/>
+                                <rect key="frame" x="190" y="228" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="41" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnn-6m-MQV">
-                                <rect key="frame" x="190" y="186" width="18" height="21"/>
+                                <rect key="frame" x="190" y="186" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -269,6 +274,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="correctAmtLabel" destination="nnn-6m-MQV" id="KXU-J4-bUl"/>
+                        <outlet property="incorrectAmtLabel" destination="b0y-yX-017" id="HQ4-WJ-oF1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Po9-hK-x9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -300,10 +309,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGv-1E-xZ1">
-                                <rect key="frame" x="271" y="530" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Back Side:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRj-aF-QwA">
                                 <rect key="frame" x="13" y="281" width="81" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -322,12 +327,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGv-1E-xZ1">
+                                <rect key="frame" x="271" y="530" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveCardClick" destination="k4j-k9-EtL" eventType="touchUpInside" id="2OK-uA-6yi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create a Card" id="pt9-D9-lFF">
                         <barButtonItem key="backBarButtonItem" title="Create A Card" id="m2s-xz-vdN"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cardBackDescription" destination="Ov9-8a-MFH" id="3Pk-h0-FNW"/>
+                        <outlet property="cardFrontDescription" destination="r9D-b3-aFx" id="wHz-rR-ySq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujW-bW-5En" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -363,6 +379,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI0-9j-POE">
                                 <rect key="frame" x="201" y="247" width="50" height="32"/>
                                 <state key="normal" title="Button" image="thumbs-down"/>
+                                <connections>
+                                    <action selector="thumbsDownClicked" destination="VmK-Zf-BQR" eventType="touchUpInside" id="hX5-oH-7Qy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXA-KS-T7R">
                                 <rect key="frame" x="500" y="247" width="38" height="30"/>
