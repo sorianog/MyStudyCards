@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 var decks = [NSManagedObject]()
 var cards = [NSManagedObject]()
@@ -74,4 +75,15 @@ struct Card{
     var frontDescription: String
     var backDescription: String
     var dname: String
+}
+
+extension UIViewController {
+  func hideKeyboardWhenTappedAround() {
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+    view.addGestureRecognizer(tap)
+  }
+  
+  func dismissKeyboard() {
+    view.endEditing(true)
+  }
 }
