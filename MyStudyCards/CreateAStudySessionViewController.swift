@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 var deck = Decks();
 
@@ -14,9 +15,25 @@ class CreateAStudySessionViewController: ViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDecks()
 
         // Do any additional setup after loading the view.
     }
+  
+  func loadDecks() {
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let managedContext = appDelegate.managedObjectContext
+    
+    let fetchRequest = NSFetchRequest(entityName: "Deck")
+    
+    do {
+      let results = try managedContext.executeFetchRequest(fetchRequest)
+      decks = results as! [NSManagedObject]
+    } catch let error as NSError {
+      print("Could not save \(error), \(error.userInfo)")
+    }
+  }
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

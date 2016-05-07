@@ -23,7 +23,7 @@ class ResultsScreenViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    correctAmtLabel.text = String(correct)
-    incorrectAmtLabel.text = String(incorrect)
+    correctAmtLabel.text = "\(correct)"
+    incorrectAmtLabel.text = "\(incorrect)"
   }
 }

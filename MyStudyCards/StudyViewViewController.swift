@@ -24,6 +24,12 @@ class StudyViewViewController: ViewController {
   
   }
   
+  
+  @IBAction func thumbsDownClicked() {
+    incorrect++
+  }
+
+  
   override func viewDidLoad() {
       super.viewDidLoad()
 
