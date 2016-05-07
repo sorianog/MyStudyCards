@@ -10,34 +10,53 @@ import UIKit
 
 var correct = 0
 var incorrect = 0
+var currentCard = 0
 
 class StudyViewViewController: ViewController {
 
+    @IBOutlet weak var label: UITextView!
 
   @IBAction func thumbsUpClicked() {
-    correct++
-    //for now, this just advances to the results screen
-    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-    
-    let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("resultsViewController") as UIViewController
-    self.presentViewController(nextViewController, animated:true, completion:nil)
+    correct = correct + 1
+    currentCard = currentCard + 1
+    if(currentCard >= frontOfCards.count){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("resultsViewController") as UIViewController
+        self.presentViewController(nextViewController, animated:true, completion:nil)
+    } else {
+        updateText()
+    }
   
   }
   
   
   @IBAction func thumbsDownClicked() {
-    incorrect++
+    incorrect = incorrect + 1
+    currentCard = currentCard + 1
+    if(currentCard >= frontOfCards.count){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("resultsViewController") as UIViewController
+        self.presentViewController(nextViewController, animated:true, completion:nil)
+    } else {
+        updateText()
+    }
   }
-
   
   override func viewDidLoad() {
       super.viewDidLoad()
-
+      updateText()
+    
       let value = UIInterfaceOrientation.LandscapeLeft.rawValue
       UIDevice.currentDevice().setValue(value, forKey: "orientation")
       
       // Do any additional setup after loading the view.
   }
+    
+    func updateText(){
+        label.text = frontOfCards[currentCard]
+    }
 
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()

@@ -16,8 +16,13 @@ class CreateAStudySessionViewController: ViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDecks()
+        tempFillCards()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func startSessionClicked(){
+        print("test")
+        NSNotificationCenter.defaultCenter().postNotificationName("updateCards", object: nil, userInfo: nil)
     }
   
   func loadDecks() {

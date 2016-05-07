@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3Eb-6S-nYs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--My Study Cards View Controller-->
@@ -44,7 +44,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Study Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e25-M7-jMW">
                                 <rect key="frame" x="11" y="93" width="205" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -191,7 +191,7 @@
         <!--Study View Flipside View Controller-->
         <scene sceneID="RTX-h7-pvc">
             <objects>
-                <viewController id="TvC-mD-IDS" customClass="StudyViewFlipsideViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="flipSideViewController" id="TvC-mD-IDS" customClass="StudyViewFlipsideViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vYG-ZB-4aN"/>
                         <viewControllerLayoutGuide type="bottom" id="4rm-hA-afT"/>
@@ -217,6 +217,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="label" destination="AcT-fi-ckS" id="mIV-hY-toB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hO5-Qc-dYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,31 +247,31 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You made it!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kX5-tc-lnt">
                                 <rect key="frame" x="113" y="108" width="95" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correct:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xf-vf-P0N">
                                 <rect key="frame" x="113" y="186" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Incorrect:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIK-qQ-CKr">
                                 <rect key="frame" x="102" y="228" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0y-yX-017">
                                 <rect key="frame" x="190" y="228" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="41" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnn-6m-MQV">
                                 <rect key="frame" x="190" y="186" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -352,7 +355,7 @@
         <!--Study View View Controller-->
         <scene sceneID="hIS-FJ-XDg">
             <objects>
-                <viewController id="VmK-Zf-BQR" customClass="StudyViewViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="frontSideViewController" id="VmK-Zf-BQR" customClass="StudyViewViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7G3-Oa-19j"/>
                         <viewControllerLayoutGuide type="bottom" id="Cq1-tW-1uQ"/>
@@ -402,6 +405,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="P0S-P6-s7q"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="label" destination="hQW-bm-loG" id="0i5-wX-oGP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqd-gH-M9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -410,7 +416,7 @@
         <!--My Decks-->
         <scene sceneID="PlE-uz-vvW">
             <objects>
-                <viewController title="My Decks" id="iyX-3F-G4W" customClass="MyDecksViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myDecksViewController" title="My Decks" id="iyX-3F-G4W" customClass="MyDecksViewController" customModule="MyStudyCards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZDl-KO-ULw"/>
                         <viewControllerLayoutGuide type="bottom" id="ER0-Un-JUJ"/>
@@ -510,6 +516,7 @@
                                 <rect key="frame" x="131" y="415" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
+                                    <action selector="startSessionClicked" destination="Pr1-uP-v4p" eventType="touchUpInside" id="4Og-4f-VuX"/>
                                     <segue destination="VmK-Zf-BQR" kind="push" id="mtX-z7-Ozt"/>
                                 </connections>
                             </button>
@@ -528,7 +535,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="250" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -547,13 +554,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-dJ-A24">
                                 <rect key="frame" x="125" y="291" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Front" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5p-zf-7V9">
                                 <rect key="frame" x="229" y="291" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -590,6 +597,6 @@
         <image name="thumbs-up" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JvP-Bv-l9k"/>
+        <segue reference="07P-0h-Ujp"/>
     </inferredMetricsTieBreakers>
 </document>
