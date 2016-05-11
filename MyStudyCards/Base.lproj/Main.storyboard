@@ -595,6 +595,9 @@
                         <color key="backgroundColor" red="0.086274509799999996" green="0.28235294119999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create A Study Session" id="2WJ-Q1-EVb"/>
+                    <connections>
+                        <outlet property="sideSwitch" destination="0HQ-Od-8ov" id="Gjn-1J-4WD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzN-GM-bUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

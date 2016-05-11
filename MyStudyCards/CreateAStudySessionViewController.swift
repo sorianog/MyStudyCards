@@ -13,10 +13,13 @@ var deck = Decks();
 
 class CreateAStudySessionViewController: ViewController{
 
+    @IBOutlet weak var sideSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDecks()
-
+        loadCards()
+        sideSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.switchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     @IBAction func startSessionClicked(){
@@ -39,13 +42,36 @@ class CreateAStudySessionViewController: ViewController{
       print("Could not save \(error), \(error.userInfo)")
     }
   }
+    
+    func loadCards() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Card")
+        
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            cards = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    func switchIsChanged(sideSwitch: UISwitch) {
+        if (sideSwitch.on) {
+            side = "front"
+        } else {
+            side = "back"
+        }
+    }
   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
 }
 
 extension CreateAStudySessionViewController: UITableViewDataSource {
@@ -63,6 +89,15 @@ extension CreateAStudySessionViewController: UITableViewDataSource {
     cell.textLabel!.text = deck.valueForKey("name") as? String
     return cell
   }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath!)! as UITableViewCell
+        selectedDeckName = (currentCell.textLabel!.text)!
+    }
+
+    
+    
 }
 
 extension CreateAStudySessionViewController: UITableViewDelegate {

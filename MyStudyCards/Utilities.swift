@@ -14,20 +14,26 @@ var decks = [NSManagedObject]()
 var cards = [NSManagedObject]()
 var frontOfCards = [String]()
 var backOfCards = [String]()
+var selectedDeckName = "none"
+var side = "front"
+var shuffle = true
 
 func tempFillCards(){
-    frontOfCards.append("Card 1")
-    frontOfCards.append("Card 2")
-    frontOfCards.append("Card 3")
-    frontOfCards.append("Card 4")
-    frontOfCards.append("Card 5")
-    frontOfCards.append("Card 6")
-    backOfCards.append("Back of card 1")
-    backOfCards.append("Back of card 2")
-    backOfCards.append("Back of card 3")
-    backOfCards.append("Back of card 4")
-    backOfCards.append("Back of card 5")
-    backOfCards.append("Back of card 6")
+    if(shuffle){
+        cards.shuffleInPlace()
+    }
+    for index in 0...cards.count-1 {
+        let card = cards[index]
+        if(card.valueForKey("dName") as! String == (selectedDeckName)){
+            if(side == "front"){
+                frontOfCards.append(card.valueForKey("front") as! String)
+                backOfCards.append(card.valueForKey("back") as! String)
+            } else {
+                frontOfCards.append(card.valueForKey("back") as! String)
+                backOfCards.append(card.valueForKey("front") as! String)
+            }
+        }
+    }
     
 }
 
@@ -75,6 +81,29 @@ struct Card{
     var frontDescription: String
     var backDescription: String
     var dname: String
+}
+
+extension CollectionType {
+    /// Return a copy of `self` with its elements shuffled
+    func shuffle() -> [Generator.Element] {
+        var list = Array(self)
+        list.shuffleInPlace()
+        return list
+    }
+}
+
+extension MutableCollectionType where Index == Int {
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffleInPlace() {
+        // empty and single-element collections don't shuffle
+        if count < 2 { return }
+        
+        for i in 0..<count - 1 {
+            let j = Int(arc4random_uniform(UInt32(count - i))) + i
+            guard i != j else { continue }
+            swap(&self[i], &self[j])
+        }
+    }
 }
 
 extension UIViewController {
