@@ -14,7 +14,6 @@ var curDeckName = ""
 class CreateACardViewController: ViewController {
     
     
-
     @IBOutlet weak var cardFrontDescription: UITextView!
     @IBOutlet weak var cardBackDescription: UITextView!
 
@@ -47,5 +46,14 @@ class CreateACardViewController: ViewController {
         let newCard = Card(frontDescription: cardFrontDescription.text!, backDescription: cardBackDescription.text!, dname: curDeckName)
         curCardArray.append(newCard)
     }
-
+    
+    override func viewWillDisappear(animated : Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (self.isMovingFromParentViewController()){
+            print("moving back to create a deck")
+            
+        }
+    }
+    
 }

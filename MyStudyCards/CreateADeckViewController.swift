@@ -12,12 +12,13 @@ import CoreData
 class CreateADeckViewController: ViewController {
 
   @IBOutlet weak var deckNameField: UITextField!
+  @IBOutlet weak var tableView: UITableView!
     
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.hideKeyboardWhenTappedAround()
-
+    print("View Did Load")
     // Do any additional setup after loading the view.
   }
 
@@ -39,7 +40,6 @@ class CreateADeckViewController: ViewController {
   
   @IBAction func saveClicked() {
     saveDeckName(deckNameField.text!)
-
   }
     
 
@@ -48,6 +48,7 @@ class CreateADeckViewController: ViewController {
     }
   
   func saveDeckName(name: String){
+    
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let managedContext = appDelegate.managedObjectContext
     
@@ -71,6 +72,7 @@ class CreateADeckViewController: ViewController {
         card.setValue(toAdd.dname, forKey: "dName")
         card.setValue(toAdd.frontDescription, forKey: "front")
         card.setValue(toAdd.backDescription, forKey: "back")
+        card.setValue(cards.count, forKey:  "cardNumber")
         do {
             try managedContext.save()
             print("saved card to cards")
@@ -83,26 +85,47 @@ class CreateADeckViewController: ViewController {
     //remove all after saving
     curCardArray.removeAll()
     
+    //UPDATE HERE
+    tableView.reloadData()
+    
   }
-
+    
+    func loadCardsOnReturn(){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Card")
+        
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            cards = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
 }
 
 extension CreateADeckViewController: UITableViewDataSource {
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("table view number of Rows IN Section")
         return cards.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         var deckCardList = [String]()
         
         var index: Int
         index = 0
-        while(index<cards.count){
-            print("adding card to deck list for display")
+        while(index<cards.count-1){
             let card = cards[index]
-            if card.valueForKey("dName") as? String == deckNameField.text!{
-                deckCardList.append((card.valueForKey("dName") as? String)!)
+            print("if and index is: ")
+            print(index)
+            print(card.valueForKey("front"))
+            if card.valueForKey("front") as? String == deckNameField.text!{
+                //var cardString = String(card.valueForKey("cardNumber") as? Int)
+                print("added to deckCardList")
+                deckCardList.append((card.valueForKey("front") as? String)!)
             }
             index++
         }
@@ -115,7 +138,9 @@ extension CreateADeckViewController: UITableViewDataSource {
 
         let card = deckCardList[indexPath.row]
         cell.textLabel!.text = card
+        
         return cell
+        
     }
 }
 
