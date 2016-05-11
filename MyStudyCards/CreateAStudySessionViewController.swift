@@ -91,13 +91,9 @@ extension CreateAStudySessionViewController: UITableViewDataSource {
   }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         let indexPath = tableView.indexPathForSelectedRow
-        
         let currentCell = tableView.cellForRowAtIndexPath(indexPath!)! as UITableViewCell
-        
         selectedDeckName = (currentCell.textLabel!.text)!
-        print(selectedDeckName)
     }
 
     
