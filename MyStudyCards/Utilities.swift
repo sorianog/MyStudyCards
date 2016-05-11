@@ -14,20 +14,24 @@ var decks = [NSManagedObject]()
 var cards = [NSManagedObject]()
 var frontOfCards = [String]()
 var backOfCards = [String]()
+var selectedDeckName = "none"
+var side = "front"
 
 func tempFillCards(){
-    frontOfCards.append("Card 1")
-    frontOfCards.append("Card 2")
-    frontOfCards.append("Card 3")
-    frontOfCards.append("Card 4")
-    frontOfCards.append("Card 5")
-    frontOfCards.append("Card 6")
-    backOfCards.append("Back of card 1")
-    backOfCards.append("Back of card 2")
-    backOfCards.append("Back of card 3")
-    backOfCards.append("Back of card 4")
-    backOfCards.append("Back of card 5")
-    backOfCards.append("Back of card 6")
+    //loop over cards, finding each card where dname=selectedDeckName
+    //append the back and front values to the approriate front/back arrays
+    for index in 0...cards.count-1 {
+        let card = cards[index]
+        if(card.valueForKey("dName") as! String == (selectedDeckName)){
+            if(side == "front"){
+                frontOfCards.append(card.valueForKey("front") as! String)
+                backOfCards.append(card.valueForKey("back") as! String)
+            } else {
+                frontOfCards.append(card.valueForKey("back") as! String)
+                backOfCards.append(card.valueForKey("front") as! String)
+            }
+        }
+    }
     
 }
 

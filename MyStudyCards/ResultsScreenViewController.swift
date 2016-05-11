@@ -19,6 +19,8 @@ class ResultsScreenViewController: UIViewController {
         currentCard = 0
         frontOfCards.removeAll()
         backOfCards.removeAll()
+        side = "front"
+        selectedDeckName = "none"
 
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("mainViewController") as UIViewController
