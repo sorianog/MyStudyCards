@@ -111,15 +111,12 @@ class CreateADeckViewController: ViewController {
 extension CreateADeckViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Number of rows in section")
-        print(deckName)
         deckCardList.removeAll()
         var index: Int
         index = 0
         while(index<(cards.count)){
             let card = cards[index]
             if(((card.valueForKey("dName") as? String)!) == deckName){
-                print("append")
                 deckCardList.append((card.valueForKey("front") as? String)!)
             }
             index++
@@ -128,7 +125,6 @@ extension CreateADeckViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("cellForRowAtIndexPath")
         let cellIdentifier = "cardCell"
         var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
         if cell == nil {
@@ -136,7 +132,6 @@ extension CreateADeckViewController: UITableViewDataSource {
         }
         //for some reason the indexRow.row is greater than what we can handle. so need to provide a check to avoid an exception.
         if(indexPath.row < deckCardList.count){
-            print("set cell to have cardnames")
             let cardname = deckCardList[indexPath.row]
             cell.textLabel!.text = cardname
         }
@@ -145,8 +140,6 @@ extension CreateADeckViewController: UITableViewDataSource {
     
     override func viewWillDisappear(animated : Bool) {
         super.viewWillDisappear(animated)
-        print("view disappearing")
-        print(deckNameField.text!)
         curDeckName = deckNameField.text!
     }
 }

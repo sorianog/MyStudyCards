@@ -41,20 +41,8 @@ class CreateACardViewController: ViewController {
     */
     
     @IBAction func saveCardClick(){
-        //place into temp array
-        print("saved card")
-        print(curDeckName)
         let newCard = Card(frontDescription: cardFrontDescription.text!, backDescription: cardBackDescription.text!, dname: curDeckName)
         curCardArray.append(newCard)
-    }
-    
-    override func viewWillDisappear(animated : Bool) {
-        super.viewWillDisappear(animated)
-        
-        if (self.isMovingFromParentViewController()){
-            print("moving back to create a deck")
-            
-        }
     }
     
 }
