@@ -16,8 +16,6 @@ class CreateADeckViewController: ViewController {
     
     var deckName = ""
     var deckCardList = [String]()
-
-    
   
   override func viewDidLoad() {
     super.viewDidLoad()
