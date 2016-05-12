@@ -14,10 +14,13 @@ class CreateADeckViewController: ViewController {
   @IBOutlet weak var deckNameField: UITextField!
   @IBOutlet weak var tableView: UITableView!
     
+    var deckName = ""
+    
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.hideKeyboardWhenTappedAround()
+    tableView.reloadData()
     print("View Did Load")
     // Do any additional setup after loading the view.
   }
@@ -39,11 +42,13 @@ class CreateADeckViewController: ViewController {
     */
   
   @IBAction func saveClicked() {
+    deckName = deckNameField.text!
     saveDeckName(deckNameField.text!)
   }
     
-
     @IBAction func createCard(){
+        print("setting curDecName to")
+        print(deckNameField.text!)
         curDeckName = deckNameField.text!
     }
   
@@ -84,7 +89,7 @@ class CreateADeckViewController: ViewController {
     }
     //remove all after saving
     curCardArray.removeAll()
-    
+    loadCardsOnReturn()
     //UPDATE HERE
     tableView.reloadData()
     
@@ -113,32 +118,31 @@ extension CreateADeckViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        print("cellForRowAtIndexPath")
         var deckCardList = [String]()
         
         var index: Int
         index = 0
-        while(index<cards.count-1){
+        while(index<(cards.count)){
             let card = cards[index]
-            print("if and index is: ")
-            print(index)
-            print(card.valueForKey("front"))
-            if card.valueForKey("front") as? String == deckNameField.text!{
-                //var cardString = String(card.valueForKey("cardNumber") as? Int)
-                print("added to deckCardList")
-                deckCardList.append((card.valueForKey("front") as? String)!)
-            }
+            print("append")
+            print((card.valueForKey("front") as? String)!)
+            deckCardList.append((card.valueForKey("front") as? String)!)
             index++
         }
-        
         let cellIdentifier = "cardCell"
         var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
         }
-
-        let card = deckCardList[indexPath.row]
-        cell.textLabel!.text = card
-        
+        //for some reason the indexRow.row is greater than what we can handle. so need to provide a check to avoid an exception.
+        if(indexPath.row < deckCardList.count){
+            print("set cell to have cardnames")
+            let cardname = deckCardList[indexPath.row]
+            print("cardname: ")
+            print(cardname)
+            cell.textLabel!.text = cardname
+        }
         return cell
         
     }

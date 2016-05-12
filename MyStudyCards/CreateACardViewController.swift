@@ -43,6 +43,7 @@ class CreateACardViewController: ViewController {
     @IBAction func saveCardClick(){
         //place into temp array
         print("saved card")
+        print(curDeckName)
         let newCard = Card(frontDescription: cardFrontDescription.text!, backDescription: cardBackDescription.text!, dname: curDeckName)
         curCardArray.append(newCard)
     }
