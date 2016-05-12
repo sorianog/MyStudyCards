@@ -50,6 +50,11 @@ class CreateADeckViewController: ViewController {
         curDeckName = deckNameField.text!
     }
   
+  func loadCards(notification: NSNotification){
+    deckName = deckNameField.text!
+    saveDeckName(deckNameField.text!)
+  }
+  
   func saveDeckName(name: String){
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -73,16 +78,17 @@ class CreateADeckViewController: ViewController {
     for toAdd in curCardArray{
         let curEntity = NSEntityDescription.entityForName("Card", inManagedObjectContext: managedContext)
         let card = NSManagedObject(entity: curEntity!, insertIntoManagedObjectContext: managedContext)
-        
-        card.setValue(toAdd.dname, forKey: "dName")
-        card.setValue(toAdd.frontDescription, forKey: "front")
-        card.setValue(toAdd.backDescription, forKey: "back")
-        card.setValue(cards.count, forKey:  "cardNumber")
-        do {
-            try managedContext.save()
-            cards.append(card)
-        } catch let error as NSError {
-            print("Could not save \(error), \(error.userInfo)")
+        if(toAdd.frontDescription != ""){
+            card.setValue(toAdd.dname, forKey: "dName")
+            card.setValue(toAdd.frontDescription, forKey: "front")
+            card.setValue(toAdd.backDescription, forKey: "back")
+            card.setValue(cards.count, forKey:  "cardNumber")
+            do {
+                try managedContext.save()
+                cards.append(card)
+            } catch let error as NSError {
+                print("Could not save \(error), \(error.userInfo)")
+            }
         }
     }
     curCardArray.removeAll()
