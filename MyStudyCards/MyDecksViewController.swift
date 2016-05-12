@@ -15,8 +15,6 @@ class MyDecksViewController: ViewController {
     super.viewDidLoad()
     loadDecks()
     loadCards()
-    
-      
     // Do any additional setup after loading the view.
   }
 

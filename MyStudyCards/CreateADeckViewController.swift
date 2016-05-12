@@ -108,11 +108,9 @@ class CreateADeckViewController: ViewController {
         }
         
         if(decks.count>0){
-            print("deck existed")
             return true
         }
         else{
-            print("deck did not exist")
             return false
         }
     }
