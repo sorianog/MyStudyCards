@@ -21,6 +21,19 @@ var shuffle = true
 func tempFillCards(){
     if(shuffle){
         cards.shuffleInPlace()
+    } else {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Card")
+        
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            cards = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+
     }
     for index in 0...cards.count-1 {
         let card = cards[index]
@@ -36,46 +49,6 @@ func tempFillCards(){
     }
     
 }
-
-class Decks{
-    
-    init(){
-        addDummyData()
-    }
-    var decksList = [String]()
-    //return list of current decks
-    func getDecks() -> [String]{
-        
-        return decksList
-    }
-    
-    //add provided string to list of decks
-    func addToDeck(name: String){
-        
-        decksList.append(name)
-    }
-    
-    func addDummyData(){
-        decksList.append("Gerald")
-        decksList.append("Sean")
-        decksList.append("Noah")
-    }
-    
-}
-
-class Cards{
-    
-    var cardsList = [String]()
-    
-    func getCards() -> [String]{
-        return cardsList
-    }
-    
-    func addToCards(name: String){
-        cardsList.append(name)
-    }
-}
-
 
 struct Card{
     var frontDescription: String

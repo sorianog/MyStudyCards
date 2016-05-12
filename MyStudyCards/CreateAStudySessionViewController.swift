@@ -9,17 +9,17 @@
 import UIKit
 import CoreData
 
-var deck = Decks();
-
 class CreateAStudySessionViewController: ViewController{
 
     @IBOutlet weak var sideSwitch: UISwitch!
+    @IBOutlet weak var shuffleSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDecks()
         loadCards()
-        //sideSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.switchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        sideSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.sideSwitchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        shuffleSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.shuffleSwitchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     @IBAction func startSessionClicked(){
@@ -57,11 +57,19 @@ class CreateAStudySessionViewController: ViewController{
         }
     }
     
-    func switchIsChanged(sideSwitch: UISwitch) {
+    func sideSwitchIsChanged(sideSwitch: UISwitch) {
         if (sideSwitch.on) {
             side = "front"
         } else {
             side = "back"
+        }
+    }
+    
+    func shuffleSwitchIsChanged(sideSwitch: UISwitch) {
+        if (sideSwitch.on) {
+            shuffle = true;
+        } else {
+            shuffle = false;
         }
     }
   

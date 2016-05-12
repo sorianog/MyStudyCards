@@ -21,6 +21,7 @@ class ResultsScreenViewController: UIViewController {
         backOfCards.removeAll()
         side = "front"
         selectedDeckName = "none"
+        shuffle = true
 
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("mainViewController") as UIViewController
