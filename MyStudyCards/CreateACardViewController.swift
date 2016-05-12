@@ -29,6 +29,12 @@ class CreateACardViewController: ViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(animated : Bool) {
+        if(self.isMovingFromParentViewController()){
+            print("moving to parent")
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

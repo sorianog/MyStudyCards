@@ -46,7 +46,6 @@ class CreateADeckViewController: ViewController {
   }
     
     @IBAction func createCard(){
-        print(deckNameField.text!)
         curDeckName = deckNameField.text!
     }
   
@@ -153,3 +152,5 @@ extension CreateADeckViewController: UITableViewDataSource {
 extension CreateADeckViewController: UITableViewDelegate {
     
 }
+
+
