@@ -22,6 +22,7 @@ class CreateADeckViewController: ViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.hideKeyboardWhenTappedAround()
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadCards:",name:"load", object: nil)
 
     // Do any additional setup after loading the view.
   }
@@ -47,10 +48,15 @@ class CreateADeckViewController: ViewController {
     saveDeckName(deckNameField.text!)
   }
     
-    @IBAction func createCard(){
-        print(deckNameField.text!)
-        curDeckName = deckNameField.text!
-    }
+  @IBAction func createCard(){
+      print(deckNameField.text!)
+      curDeckName = deckNameField.text!
+  }
+  
+  func loadCards(notification: NSNotification){
+    deckName = deckNameField.text!
+    saveDeckName(deckNameField.text!)
+  }
   
   func saveDeckName(name: String){
     
