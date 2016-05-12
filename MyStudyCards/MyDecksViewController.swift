@@ -13,11 +13,8 @@ class MyDecksViewController: ViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    print("view did load, My DECKS")
     loadDecks()
     loadCards()
-    
-      
     // Do any additional setup after loading the view.
   }
 

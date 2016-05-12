@@ -58,17 +58,18 @@ class CreateADeckViewController: ViewController {
     let managedContext = appDelegate.managedObjectContext
     
     let entity = NSEntityDescription.entityForName("Deck", inManagedObjectContext: managedContext)
-    
-    let deck = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-    
-    deck.setValue(name, forKey: "name")
-    
-    
-    do {
-      try managedContext.save()
-      decks.append(deck)
-    } catch let error as NSError {
-      print("Could not save \(error), \(error.userInfo)")
+    let deckExists = checkForDeck(name)
+    if(!deckExists){
+        let deck = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        deck.setValue(name, forKey: "name")
+        
+        do {
+          try managedContext.save()
+          decks.append(deck)
+        } catch let error as NSError {
+          print("Could not save \(error), \(error.userInfo)")
+    }
     }
     
     for toAdd in curCardArray{
@@ -86,24 +87,31 @@ class CreateADeckViewController: ViewController {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
-    
     curCardArray.removeAll()
-    loadCardsOnReturn()
     tableView.reloadData()
     
   }
     
-    func loadCardsOnReturn(){
+    func checkForDeck(name: String)-> Bool{
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName: "Card")
+        let fetchRequest = NSFetchRequest(entityName: "Deck")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
         
         do {
             let results = try managedContext.executeFetchRequest(fetchRequest)
-            cards = results as! [NSManagedObject]
+            decks = results as! [NSManagedObject]
         } catch let error as NSError {
             print("Could not save \(error), \(error.userInfo)")
+        }
+        
+        if(decks.count>0){
+            return true
+        }
+        else{
+            return false
         }
     }
 }
