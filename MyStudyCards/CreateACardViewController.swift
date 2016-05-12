@@ -50,5 +50,10 @@ class CreateACardViewController: ViewController {
         let newCard = Card(frontDescription: cardFrontDescription.text!, backDescription: cardBackDescription.text!, dname: curDeckName)
         curCardArray.append(newCard)
     }
-    
+  
+  override func viewDidDisappear(animated: Bool) {
+    if (self.isMovingFromParentViewController()){
+      NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
+    }
+  }
 }

@@ -20,6 +20,7 @@ class CreateADeckViewController: ViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.hideKeyboardWhenTappedAround()
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadCards:",name:"load", object: nil)
 
     // Do any additional setup after loading the view.
   }
