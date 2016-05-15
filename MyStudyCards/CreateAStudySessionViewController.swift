@@ -18,8 +18,8 @@ class CreateAStudySessionViewController: ViewController{
         super.viewDidLoad()
         loadDecks()
         loadCards()
-//        sideSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.sideSwitchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
-//        shuffleSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.shuffleSwitchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        sideSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.sideSwitchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        shuffleSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.shuffleSwitchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     @IBAction func startSessionClicked(){
