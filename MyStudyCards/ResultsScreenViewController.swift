@@ -32,5 +32,8 @@ class ResultsScreenViewController: UIViewController {
     super.viewDidLoad()
     correctAmtLabel.text = "\(correct)"
     incorrectAmtLabel.text = "\(incorrect)"
+    
+    let value = UIInterfaceOrientation.Portrait.rawValue
+    UIDevice.currentDevice().setValue(value, forKey: "orientation")
   }
 }

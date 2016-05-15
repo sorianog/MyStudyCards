@@ -13,13 +13,19 @@ class CreateAStudySessionViewController: ViewController{
 
     @IBOutlet weak var sideSwitch: UISwitch!
     @IBOutlet weak var shuffleSwitch: UISwitch!
+    @IBOutlet weak var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDecks()
         loadCards()
-//        sideSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.sideSwitchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
-//        shuffleSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.shuffleSwitchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        sideSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.sideSwitchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        shuffleSwitch.addTarget(self, action: #selector(CreateAStudySessionViewController.shuffleSwitchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
+        let value = UIInterfaceOrientation.Portrait.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        
+        startButton.enabled = false
     }
     
     @IBAction func startSessionClicked(){
@@ -102,6 +108,7 @@ extension CreateAStudySessionViewController: UITableViewDataSource {
         let indexPath = tableView.indexPathForSelectedRow
         let currentCell = tableView.cellForRowAtIndexPath(indexPath!)! as UITableViewCell
         selectedDeckName = (currentCell.textLabel!.text)!
+        startButton.enabled = true
     }
 
     
