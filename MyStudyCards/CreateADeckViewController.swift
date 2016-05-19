@@ -131,7 +131,7 @@ extension CreateADeckViewController: UITableViewDataSource {
             if(((card.valueForKey("dName") as? String)!) == deckName){
                 deckCardList.append((card.valueForKey("front") as? String)!)
             }
-            index++
+            index += 1
         }
         return deckCardList.count
     }
