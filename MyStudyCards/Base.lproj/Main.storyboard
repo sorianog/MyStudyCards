@@ -507,6 +507,9 @@
                     <navigationItem key="navigationItem" title="My Decks" id="dx9-WY-El4">
                         <barButtonItem key="backBarButtonItem" title="My Decks" id="S3v-Up-hJT"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableViewDeck" destination="F0s-xp-yEE" id="LuY-g3-5uj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Plx-bT-hmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -654,6 +657,6 @@
         <image name="thumbs-up" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JvP-Bv-l9k"/>
+        <segue reference="07P-0h-Ujp"/>
     </inferredMetricsTieBreakers>
 </document>

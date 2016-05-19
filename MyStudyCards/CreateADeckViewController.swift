@@ -153,6 +153,10 @@ extension CreateADeckViewController: UITableViewDataSource {
     override func viewWillDisappear(animated : Bool) {
         super.viewWillDisappear(animated)
         curDeckName = deckNameField.text!
+        if (self.isMovingFromParentViewController()){
+            NSNotificationCenter.defaultCenter().postNotificationName("load_decks", object: nil)
+        }
+
     }
 }
 

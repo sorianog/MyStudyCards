@@ -10,11 +10,16 @@ import UIKit
 import CoreData
 
 class MyDecksViewController: ViewController {
+    
+    
+    
+    @IBOutlet weak var tableViewDeck: UITableView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     loadDecks()
     loadCards()
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadDecksOnReturn:",name:"load_decks", object: nil)
     // Do any additional setup after loading the view.
   }
 
@@ -60,6 +65,11 @@ class MyDecksViewController: ViewController {
         } catch let error as NSError {
             print("Could not save \(error), \(error.userInfo)")
         }
+    }
+    
+    func loadDecksOnReturn(notification: NSNotification){
+        loadDecks()
+        tableViewDeck.reloadData()
     }
 
 }
