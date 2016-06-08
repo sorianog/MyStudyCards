@@ -1,4 +1,4 @@
-# MyStudyCards
+# MyStudyCards ![App Icon](https://raw.githubusercontent.com/sorianog/MyStudyCards/master/MyStudyCards/Assets.xcassets/images/AppIcon.appiconset/Icon-Small%402x.png "App Icon")
 A group project to create a flash card app for iOS
 
 SE-4910i Mobile Applications -- iOS	 
